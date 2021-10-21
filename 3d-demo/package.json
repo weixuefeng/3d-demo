@@ -15,17 +15,17 @@
     "@react-three/drei": "^7.17.1",
     "@react-three/fiber": "^7.0.17",
     "@react-three/xr": "^3.2.0",
-    "react-spring": "^8.0.27",
     "next": "11.1.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-spring": "^8.0.27",
     "react-three": "^0.9.7",
     "three": "^0.133.1"
   },
   "devDependencies": {
     "@types/react": "17.0.31",
     "@types/three": "^0.133.1",
-    "eslint": "8.0.1",
+    "eslint": "^8.0.1",
     "eslint-config-next": "11.1.2",
     "typescript": "4.4.4"
   }
