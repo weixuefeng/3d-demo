@@ -30,3 +30,84 @@ body {
 #canvas {
   height: 992px;
 }
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #272730c0;
+}
+
+.welcome {  
+  color: white;
+  font-size: 5rem;
+}
+
+.start {
+  position: relative;
+  margin-top: 52vh;
+  color: white;
+  font-size: 5vw;
+  text-align: center;
+  
+}
+
+.controlsL {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 30%; 
+}
+
+.controlsR {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 6%; 
+}
+
+.controlsTR {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 12%; 
+}
+
+.dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  cursor: pointer;
+  border: 2px solid white;
+}
+
+.loading {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: #171717;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-bar-container {
+  width: 200px;
+  height: 3px;
+  background: #272727;
+}
+
+.loading-bar {
+  height: 3px;
+  background: white;
+}
+
