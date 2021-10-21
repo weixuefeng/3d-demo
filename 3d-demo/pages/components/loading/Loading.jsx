@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import * as THREE from 'three'
 import { useTransition, a } from 'react-spring'
 
-const Loading = () => {
+const Loading = props => {
   const [finished, set] = useState(false)
   const [width, setWidth] = useState(0)
 
@@ -18,9 +18,9 @@ const Loading = () => {
     update: { width }
   })
 
-  return props.map(
-    ({ item: finished, key, props: { opacity, width } }) =>
-      !finished && (
+  return props.map(({ item: finished, key, props: { opacity, width } }) => {
+    if (finished) {
+      return (
         <a.div className="loading" key={key} style={{ opacity }}>
           <h1 className="welcome">BitPenguin Gallery</h1>
           <div className="loading-bar-container">
@@ -28,7 +28,10 @@ const Loading = () => {
           </div>
         </a.div>
       )
-  )
+    } else {
+      return <></>
+    }
+  })
 }
 
 export default Loading
