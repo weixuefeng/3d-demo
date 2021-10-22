@@ -8,9 +8,13 @@ import { Player } from '../components/player'
 import { Building } from '../components/builds/build'
 import Art from '../components/builds/art'
 import Furniture from '../components/builds/Furniture'
-import Camera from '../components/camera'
 import Moon from '../components/moon'
 import * as THREE from 'three'
+import Cube from '../components/cube'
+import Tree from '../components/Tree'
+import Avatar from '../components/Avatar'
+import Model from '../components/Model'
+import Car from '../components/Car'
 
 export default function MainScene() {
   const [night, setNight] = useState(true)
@@ -67,6 +71,13 @@ export default function MainScene() {
           <Art />
           <Furniture />
           <Player />
+         
+          <Cube position={[0, 0, -40]}/>
+          <Tree position={[0, 0, -50]} scalse="1"/>
+          <Avatar position={[0, 0, -30]} scale="1" />
+          <Model position={[20, 0, -50]} scale="2"/>
+          <Car position={[15, 2, -40]} scale="2"/>
+
         </Physics>
         <PointerLockControls />
       </Canvas>

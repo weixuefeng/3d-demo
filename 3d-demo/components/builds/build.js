@@ -55,9 +55,6 @@ export function Building() {
         rotation={[0, 0, 0]}
         url={'/assets/3D/RoofGlass/scene.gltf'}
       />
-      <Art />
-      <Furniture />
-      <Player />
     </>
   )
 }
