@@ -1,3 +1,11 @@
+/*
+ * @Author: pony@diynova.com
+ * @Date: 2021-11-15 21:25:59
+ * @LastEditors: pony@diynova.com
+ * @LastEditTime: 2021-12-14 16:32:47
+ * @FilePath: /3d-demo-start/3d-demo/scene/main.tsx
+ * @Description: 
+ */
 import { Canvas } from '@react-three/fiber'
 import { Sky, PointerLockControls, Stars } from '@react-three/drei'
 import { Ground } from '../components/ground'
@@ -67,10 +75,11 @@ export default function MainScene() {
         <Lights night={night} performance={performance} />
         <Physics gravity={[0, -20, 0]}>
           <Ground />
+          <Player />
+
           <Building />
           <Art />
           <Furniture />
-          <Player />
          
           <Cube position={[0, 0, -40]}/>
           <Tree position={[0, 0, -50]} scalse="1"/>

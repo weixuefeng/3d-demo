@@ -1,14 +1,18 @@
+/*
+ * @Author: pony@diynova.com
+ * @Date: 2021-11-14 13:45:23
+ * @LastEditors: pony@diynova.com
+ * @LastEditTime: 2021-12-14 16:23:08
+ * @FilePath: /3d-demo-start/3d-demo/components/moon.js
+ * @Description: 
+ */
 import React from 'react'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
-import { useLoader } from '@react-three/fiber'
+import { useGLTF } from '@react-three/drei'
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader'
 
 const Moon = () => {
-  const { scene } = useLoader(GLTFLoader, 'assets/3D/Moon/scene.gltf', loader => {
-    const dracoLoader = new DRACOLoader()
-    dracoLoader.setDecoderPath('https://www.gstatic.com/draco/v1/decoders/')
-    loader.setDRACOLoader(dracoLoader)
-  })
+  const { scene } = useGLTF('assets/3D/Moon/scene.gltf')
   scene.traverse(function (child) {
     if (child.isMesh) {
       child.material.fog = false

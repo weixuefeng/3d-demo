@@ -1,3 +1,11 @@
+/*
+ * @Author: pony@diynova.com
+ * @Date: 2021-10-21 15:59:54
+ * @LastEditors: pony@diynova.com
+ * @LastEditTime: 2021-12-14 16:18:41
+ * @FilePath: /3d-demo-start/3d-demo/pages/index.tsx
+ * @Description: 
+ */
 import type { NextPage } from 'next'
 import React, { useState, useEffect, PointerEventHandler } from 'react'
 import Loading from '../components/loading/Loading'

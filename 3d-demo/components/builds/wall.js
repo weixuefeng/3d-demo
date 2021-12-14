@@ -1,6 +1,14 @@
+/*
+ * @Author: pony@diynova.com
+ * @Date: 2021-11-14 13:45:23
+ * @LastEditors: pony@diynova.com
+ * @LastEditTime: 2021-12-14 16:31:03
+ * @FilePath: /3d-demo-start/3d-demo/components/builds/wall.js
+ * @Description: 
+ */
 import { useMemo } from 'react'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
-import { useLoader } from '@react-three/fiber'
+import { useGLTF } from '@react-three/drei'
 import * as THREE from 'three'
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader'
 import { useBox } from '@react-three/cannon'
@@ -9,11 +17,7 @@ const Wall = ({ scale, position, rotation, modelUrl, mapUrl, normalMapUrl }) => 
   let texture, normal
   const size = 20
 
-  const { scene } = useLoader(GLTFLoader, modelUrl, loader => {
-    const dracoLoader = new DRACOLoader()
-    dracoLoader.setDecoderPath('https://www.gstatic.com/draco/v1/decoders/')
-    loader.setDRACOLoader(dracoLoader)
-  })
+  const { scene } = useGLTF(modelUrl)
 
   const [refFront] = useBox(() => ({
     type: 'static',

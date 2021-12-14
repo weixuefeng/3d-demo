@@ -1,15 +1,11 @@
 import React from 'react'
 import * as THREE from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
-import { useLoader } from '@react-three/fiber'
+import { useGLTF } from '@react-three/drei'
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader'
 
 const Glass = ({ scale, position, rotation, url }) => {
-  const { scene } = useLoader(GLTFLoader, url, loader => {
-    const dracoLoader = new DRACOLoader()
-    dracoLoader.setDecoderPath('https://www.gstatic.com/draco/v1/decoders/')
-    loader.setDRACOLoader(dracoLoader)
-  })
+  const { scene } = useGLTF(url)
 
   const newMaterial = new THREE.MeshPhysicalMaterial({
     color: 'skyblue'

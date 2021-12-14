@@ -1,6 +1,6 @@
 import React from 'react'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
-import { useLoader } from '@react-three/fiber'
+import { useGLTF } from '@react-three/drei'
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader'
 import { useBox } from '@react-three/cannon'
 
@@ -11,11 +11,7 @@ const Bench = ({ url, scale, position, rotation, physicsSize, physicsPosition })
     position: physicsPosition
   }))
 
-  const { scene } = useLoader(GLTFLoader, url, loader => {
-    const dracoLoader = new DRACOLoader()
-    dracoLoader.setDecoderPath('https://www.gstatic.com/draco/v1/decoders/')
-    loader.setDRACOLoader(dracoLoader)
-  })
+  const { scene } = useGLTF(url)
 
   scene.traverse(function (child) {
     if (child.isMesh) {
